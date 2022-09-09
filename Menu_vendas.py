@@ -14,13 +14,12 @@ class MenuVendas:
             print('|| (2) Sair                         ||\n')
             entrada = int(input('Escolha uma opção:'))
 
-          
-            if (entrada == 1):
+            if (entrada == '1'):
                 print('======================================')
                 print('||        LISTA DE PRODUTOS         ||')
                 print('======================================')
-            
-            if (entrada == 2):
+
+            if (entrada == '2'):
                 continuarExecutando = False
 
             # DESENVOLVER SOLUÇÃO AQUI
