@@ -22,7 +22,7 @@ class MenuNavegacao:
             print('|| (2) VENDAS                       ||')
             print('|| (3) RELATORIO                    ||')
             print('|| (4) SAIR                         ||')
-            print('======================================')
+            print('======================================\n')
             entrada = input('Escolha uma opção: ')
 
             if (entrada == '1'):
