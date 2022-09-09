@@ -1,9 +1,9 @@
-import os
-from Menu_navegacao import MenuNavegacao
+from MenuNavegacao import MenuNavegacao
+from Tela import Tela
 
 menuNavegacao = MenuNavegacao()
 
-os.system('clear')
+Tela.LimpaTela()
 print('======================================')
 print('||            BEM-VINDO             ||')
 print('======================================')

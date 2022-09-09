@@ -1,4 +1,4 @@
-import os
+from Tela import Tela
 
 
 class MenuRelatorios:
@@ -6,7 +6,7 @@ class MenuRelatorios:
         continuarExecutando = True
         entrada = 0
         while (continuarExecutando):
-            os.system('clear')
+            Tela.LimpaTela()
             print('======================================')
             print('||          MENU RELATÓRIOS         ||')
             print('======================================')
