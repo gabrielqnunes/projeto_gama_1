@@ -14,7 +14,7 @@ class MenuNavegacao:
         entrada = 0
         while (continuarExecutando):
             if (not primeiraExecucao):
-                os.system('clear')
+                os.system('cls')
             print('======================================')
             print('||          MENU NAVEGAÇÃO          ||')
             print('======================================')
@@ -35,7 +35,7 @@ class MenuNavegacao:
                 menuRelatorios.Run()
 
             if (entrada == '4'):
-                os.system('clear')
+                os.system('cls')
                 continuarExecutando = False
 
             primeiraExecucao = False
