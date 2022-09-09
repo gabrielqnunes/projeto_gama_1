@@ -12,7 +12,7 @@ class MenuVendas:
             print('======================================')
             print('|| (1) Adicionar produto no carrinho||')
             print('|| (2) Sair                         ||\n')
-            entrada = int(input('Escolha uma opção:'))
+            entrada = input('Escolha uma opção:')
 
             if (entrada == '1'):
                 print('======================================')
