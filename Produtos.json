@@ -1,35 +1,64 @@
 {
-    "id": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-    ],
-    "nome": [
-        "Cenoura",
-        "Cebola",
-        "Alface",
-        "Soja",
-        "Batata",
-        "Abobora",
-        "Coentro",
-        "Acelga",
-        "A"
-    ],
-    "preco": [
-        1.25,
-        2.2,
-        2.33,
-        3.25,
-        1.12,
-        2.12,
-        3.42,
-        2.2,
-        1.0
-    ]
+	"produtos": [{
+			"id": 0,
+			"nome": "Cenoura",
+			"preco": 2.12
+		},
+		{
+			"id": 1,
+			"nome": "Cebola",
+			"preco": 2.34
+		},
+		{
+			"id": 2,
+			"nome": "Alface",
+			"preco": 1.89
+		},
+		{
+			"id": 3,
+			"nome": "Tomate",
+			"preco": 2.25
+		},
+		{
+			"id": 4,
+			"nome": "Picles",
+			"preco": 5.79
+		},
+		{
+			"id": 5,
+			"nome": "Pepino",
+			"preco": 4.19
+		},
+		{
+			"id": 6,
+			"nome": "Batata",
+			"preco": 3.29
+		},
+		{
+			"id": 7,
+			"nome": "Banana",
+			"preco": 3.15
+		},
+		{
+			"id": 8,
+			"nome": "Abóbora",
+			"preco": 10.23
+		},
+		{
+			"id": 9,
+			"nome": "Kombucha",
+			"preco": 5.22
+		},
+		{
+			"id": 10,
+			"nome": "Morango",
+			"preco": 3.18
+		},
+		{
+			"id": 11,
+			"nome": "Maçã",
+			"preco": 4.15
+		}
+
+	]
 }
