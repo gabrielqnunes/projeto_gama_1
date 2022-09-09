@@ -1,7 +1,7 @@
-import os
-from Menu_cadastro import MenuCadastro
-from Menu_relatorios import MenuRelatorios
-from Menu_vendas import MenuVendas
+from MenuCadastro import MenuCadastro
+from MenuRelatorios import MenuRelatorios
+from MenuVendas import MenuVendas
+from Tela import Tela
 
 
 class MenuNavegacao:
@@ -14,7 +14,7 @@ class MenuNavegacao:
         entrada = 0
         while (continuarExecutando):
             if (not primeiraExecucao):
-                os.system('cls')
+                Tela.LimpaTela()
             print('======================================')
             print('||          MENU NAVEGAÇÃO          ||')
             print('======================================')
@@ -35,7 +35,7 @@ class MenuNavegacao:
                 menuRelatorios.Run()
 
             if (entrada == '4'):
-                os.system('cls')
+                Tela.LimpaTela()
                 continuarExecutando = False
 
             primeiraExecucao = False
