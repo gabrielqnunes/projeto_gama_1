@@ -6,11 +6,11 @@ import json
 
 class MenuCadastro:
     def Run(self):
+        Tela.LimpaTela()
         continuarExecutando = True
         entrada = 0
 
         def CadastroProduto():
-            Tela.LimpaTela()
             with open('Produtos.json', 'r') as openfile:
                 produtos = json.load(openfile)
 
@@ -25,7 +25,8 @@ class MenuCadastro:
                 print('|| (1) Cadastrar                    ||')
                 print('|| (2) Alterar                      ||')
                 print('|| (3) Excluir                      ||')
-                print('|| (4) Sair                         ||\n')
+                print('|| (4) Sair                         ||')
+                print('======================================\n')
                 ent = input('Escolha uma opção: ')
 
                 if (ent == '1'):

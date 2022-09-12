@@ -1,4 +1,5 @@
 import time
+import json
 from Tela import Tela
 
 
@@ -9,17 +10,12 @@ class MenuVendas:
     def Run(self):
         continuarExecutando = True
         entrada = '-1'
-        produtos = [
 
-            {"id": 0, "nome": "Cenoura", "preco": 2.12},
-            {"id": 1, "nome": "Cebola", "preco": 2.34},
-            {"id": 2, "nome": "Alface", "preco": 1.89},
-            {"id": 3, "nome": "Tomate", "preco": 2.25},
-            {"id": 4, "nome": "Picles", "preco": 5.79},
-            {"id": 5, "nome": "Pepino", "preco": 4.19},
-            {"id": 6, "nome": "Batata", "preco": 3.29},
+        produtos = []
 
-        ]
+        with open('Produtos.json', 'r') as openfile:
+            produtos_file = json.load(openfile)
+            produtos = produtos_file["produtos"]
 
         while (continuarExecutando):
             Tela.LimpaTela()
@@ -35,7 +31,7 @@ class MenuVendas:
             print('|| (3) Finalizar compra             ||')
             print('|| (4) Sair                         ||')
             print('======================================\n')
-            
+
             entrada = '-1'
 
             while int(entrada) not in range(1, 5):
@@ -61,35 +57,44 @@ class MenuVendas:
 
                     while produtoSelecionado not in idsDeProdutos:
                         produtoSelecionado = input(
-                        'Digite o id do produto que você deseja adicionar no carrinho: ')
+                            'Digite o id do produto que você deseja adicionar no carrinho: ')
                         if produtoSelecionado not in idsDeProdutos:
                             print('Opção inválida.\n')
-                    
+
                     quantidadeDesejada = '-1'
 
                     while int(quantidadeDesejada) <= 0:
                         quantidadeDesejada = input(
-                        'Digite a quantidade do produto que você deseja: ')
+                            'Digite a quantidade do produto que você deseja: ')
                         if int(quantidadeDesejada) <= 0:
                             print('Opção inválida.\n')
 
-                    for item in produtos:
+                    existe_carrinho = False
+
+                    for item in self.carrinho:
                         if str(item["id"]) == produtoSelecionado:
-                            quantidade = {
-                                "quantidade": int(quantidadeDesejada)}
-                            item.update(quantidade)
-                            self.carrinho.append(item)
+                            item["quantidade"] = item["quantidade"] + \
+                                int(quantidadeDesejada)
+                            existe_carrinho = True
+
+                    if not existe_carrinho:
+                        for item in produtos:
+                            if str(item["id"]) == produtoSelecionado:
+                                quantidade = {
+                                    "quantidade": int(quantidadeDesejada)}
+                                item.update(quantidade)
+                                self.carrinho.append(item)
 
             if (entrada == '2'):
                 idsDeProdutos = []
                 for item in self.carrinho:
                     idsDeProdutos.append(str(item["id"]))
-               
+
                 idRemovido = '-1'
-                
+
                 while idRemovido not in idsDeProdutos:
                     idRemovido = input(
-                    'Digite o id do produto que você deseja remover no carrinho:')
+                        'Digite o id do produto que você deseja remover no carrinho:')
                     if idRemovido not in idsDeProdutos:
                         print('Opção inválida.\n')
 
@@ -108,7 +113,8 @@ class MenuVendas:
                         f'({item["id"]}) - {item["nome"]}: {item["preco"]} x {item["quantidade"]}  = R$ {item["preco"]*item["quantidade"]}')
                 print('======================================')
                 for item in self.carrinho:
-                    somatorioTotal = item["preco"] * item["quantidade"] + somatorioTotal
+                    somatorioTotal = item["preco"] * \
+                        item["quantidade"] + somatorioTotal
                 print(f'TOTAL: R$ {somatorioTotal:.2f}')
                 print('======================================')
                 print('||   ESCOLHA A FORMA DE PAGAMENTO   ||')
@@ -119,24 +125,23 @@ class MenuVendas:
                 print('|| (4) Pix                          ||')
                 print('|| (5) Voltar ao carrinho de compras||')
                 print('======================================\n')
-                
+
                 escolha = '-1'
 
-                while int(escolha) not in range (1, 6):
+                while int(escolha) not in range(1, 6):
                     escolha = input('Escolha uma opção:')
                     if int(escolha) not in range(1, 6):
                         print('Opção inválida.\n')
 
-
                 if int(escolha) in range(1, 5):
                     self.carrinho.clear()
-                    Tela.LimpaTela() 
+                    Tela.LimpaTela()
                     print('======================================')
                     print('||   OBRIGADA POR COMPRAR CONOSCO!  ||')
                     print('||           VOLTE SEMPRE!          ||')
                     print('======================================')
                     time.sleep(3)
-                    return                     
-               
+                    return
+
             if (entrada == '4'):
                 continuarExecutando = False

@@ -1,5 +1,6 @@
 {
-	"produtos": [{
+	"produtos": [
+		{
 			"id": 0,
 			"nome": "Cenoura",
 			"preco": 2.12
@@ -58,7 +59,11 @@
 			"id": 11,
 			"nome": "Maçã",
 			"preco": 4.15
+		},
+		{
+			"id": 12,
+			"nome": "Busque o conhecimento",
+			"preco": 0.0
 		}
-
 	]
 }
