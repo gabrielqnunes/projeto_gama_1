@@ -1,0 +1,12 @@
+{
+    "vendas": [
+        [
+            {
+                "id": 11,
+                "nome": "Maçã",
+                "preco": 4.15,
+                "quantidade": 1
+            }
+        ]
+    ]
+}

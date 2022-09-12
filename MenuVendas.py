@@ -13,7 +13,7 @@ class MenuVendas:
 
         produtos = []
 
-        with open('Produtos.json', 'r') as openfile:
+        with open('Produtos.json', 'r', encoding='utf-8') as openfile:
             produtos_file = json.load(openfile)
             produtos = produtos_file["produtos"]
 
@@ -134,6 +134,17 @@ class MenuVendas:
                         print('Opção inválida.\n')
 
                 if int(escolha) in range(1, 5):
+                    with open("Vendas.json", "r") as file:
+                        vendas = json.load(file)
+
+                    vendas["vendas"].append(self.carrinho)
+
+                    vendas_to_string = json.dumps(
+                        vendas, indent=4, ensure_ascii=False)
+
+                    with open("Vendas.json", "w") as file:
+                        file.write(vendas_to_string)
+
                     self.carrinho.clear()
                     Tela.LimpaTela()
                     print('======================================')
