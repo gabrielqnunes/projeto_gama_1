@@ -81,7 +81,17 @@
     },
     {
         "id": 16,
-        "nome": "Lim\u00e3o",
-        "preco": 3.1
+        "nome": "Limao",
+        "preco": 3.2
+    },
+    {
+        "id": 17,
+        "nome": "Vagem",
+        "preco": 2.41
+    },
+    {
+        "id": 18,
+        "nome": "Vagem",
+        "preco": 1.4
     }
 ]
