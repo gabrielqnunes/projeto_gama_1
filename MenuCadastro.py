@@ -1,8 +1,8 @@
+from CarregaProduto import CarregaProduto
 from Tela import Tela
 from email import contentmanager
 from math import prod
-import json
-
+from CarregaProduto import CarregaProduto
 
 class MenuCadastro:
     def Run(self):
@@ -11,8 +11,8 @@ class MenuCadastro:
 
         def CadastroProduto():
             Tela.LimpaTela()
-            with open('Produtos.json', 'r') as openfile:
-                produtos = json.load(openfile)
+
+            Produtos = CarregaProduto.LoadProduto()
 
             contExecutando = True
             ent = 0
@@ -37,22 +37,20 @@ class MenuCadastro:
                         print('======================================\n')
                         nome = input('Digite o nome do produto: \n')
                         nome = nome.title().strip()
-                        while (nome in produtos['nome']):
+                        nProduto = []
+                        for i in Produtos:
+                            nProduto.append(i.get('nome'))
+                        while (nome in nProduto):
                             nome = input(
                                 'Produto já está cadastrado! Cadastre outro produto:\n')
                             nome = nome.title().strip()
                         preco = float(
                             input('Digite o preço do produto: \n').replace(',', '.'))
-                        produtos['id'].append(produtos['id'][-1]+1)
-                        produtos['nome'].append(nome)
-                        produtos['preco'].append(preco)
-                        print(produtos)
+                        Produtos.append(dict(id=Produtos[-1]['id']+1,nome=nome,preco=preco))
                         continuar = input(
                             'Produto cadastrado com sucesso!\nDeseja cadastrar outro produto?(S/N): ').upper()
                         ent = 0
-                        Produtos = json.dumps(produtos, indent=4)
-                        with open('Produtos.json', 'w') as df:
-                            df.write(Produtos)
+                        CarregaProduto.ExportProduto(Produtos)
 
                 if (ent == '4'):
                     contExecutando = False
