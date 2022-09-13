@@ -1,6 +1,7 @@
 import time
 import json
 from Tela import Tela
+from CarregaProduto import CarregaProduto
 
 
 class MenuVendas:
@@ -11,11 +12,7 @@ class MenuVendas:
         continuarExecutando = True
         entrada = '-1'
 
-        produtos = []
-
-        with open('Produtos.json', 'r', encoding='utf-8') as openfile:
-            produtos_file = json.load(openfile)
-            produtos = produtos_file["produtos"]
+        produtos = CarregaProduto.LoadProduto()
 
         while (continuarExecutando):
             Tela.LimpaTela()
