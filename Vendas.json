@@ -7,6 +7,26 @@
                 "preco": 4.15,
                 "quantidade": 1
             }
+        ],
+        [
+            {
+                "id": 7,
+                "nome": "Banana",
+                "preco": 3.15,
+                "quantidade": 5
+            },
+            {
+                "id": 11,
+                "nome": "Maçã",
+                "preco": 4.15,
+                "quantidade": 20
+            },
+            {
+                "id": 2,
+                "nome": "Alface",
+                "preco": 1.89,
+                "quantidade": 100
+            }
         ]
     ]
 }
