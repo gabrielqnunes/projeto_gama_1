@@ -10,11 +10,6 @@
         "preco": 2.34
     },
     {
-        "id": 2,
-        "nome": "Berinjela",
-        "preco": 4.0
-    },
-    {
         "id": 3,
         "nome": "Tomate",
         "preco": 2.25
@@ -68,11 +63,6 @@
         "id": 13,
         "nome": "Propolis",
         "preco": 3.75
-    },
-    {
-        "id": 14,
-        "nome": "Pizza",
-        "preco": 30.0
     },
     {
         "id": 15,
