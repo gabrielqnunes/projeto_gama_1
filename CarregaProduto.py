@@ -6,7 +6,6 @@ class CarregaProduto:
     def LoadProduto():
         with open('Produtos.json', encoding='utf-8') as openfile:
             Produtos = json.load(openfile)
-        Produtos = Produtos['produtos']
         return(Produtos)
     
     def ExportProduto(dict):

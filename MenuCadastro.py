@@ -15,45 +15,30 @@ class MenuCadastro:
             Produtos = CarregaProduto.LoadProduto()
 
             contExecutando = True
-            ent = 0
 
-            while (contExecutando):
+            Tela.LimpaTela()
+            continuar = 'S'
+            while (continuar != 'N'):
                 Tela.LimpaTela()
                 print('======================================')
                 print('||      CADASTRO DE PRODUTOS        ||')
-                print('======================================')
-                print('|| (1) Cadastrar                    ||')
-                print('|| (2) Alterar                      ||')
-                print('|| (3) Excluir                      ||')
-                print('|| (4) Sair                         ||\n')
-                ent = input('Escolha uma opção: ')
-
-                if (ent == '1'):
-                    continuar = 'S'
-                    while (continuar != 'N'):
-                        Tela.LimpaTela()
-                        print('======================================')
-                        print('||      CADASTRO DE PRODUTOS        ||')
-                        print('======================================\n')
-                        nome = input('Digite o nome do produto: \n')
-                        nome = nome.title().strip()
-                        nProduto = []
-                        for i in Produtos:
-                            nProduto.append(i.get('nome'))
-                        while (nome in nProduto):
-                            nome = input(
-                                'Produto já está cadastrado! Cadastre outro produto:\n')
-                            nome = nome.title().strip()
-                        preco = float(
-                            input('Digite o preço do produto: \n').replace(',', '.'))
-                        Produtos.append(dict(id=Produtos[-1]['id']+1,nome=nome,preco=preco))
-                        continuar = input(
-                            'Produto cadastrado com sucesso!\nDeseja cadastrar outro produto?(S/N): ').upper()
-                        ent = 0
-                        CarregaProduto.ExportProduto(Produtos)
-
-                if (ent == '4'):
-                    contExecutando = False
+                print('======================================\n')
+                nome = input('Digite o nome do produto: \n')
+                nome = nome.title().strip()
+                nProduto = []
+                for i in Produtos:
+                    nProduto.append(i.get('nome'))
+                while (nome in nProduto):
+                    nome = input(
+                        'Produto já está cadastrado! Cadastre outro produto:\n')
+                    nome = nome.title().strip()
+                preco = float(
+                    input('Digite o preço do produto: \n').replace(',', '.'))
+                Produtos.append(dict(id=Produtos[-1]['id']+1,nome=nome,preco=preco))
+                continuar = input(
+                    'Produto cadastrado com sucesso!\nDeseja cadastrar outro produto?(S/N): ').upper()
+                entrada = 2
+                CarregaProduto.ExportProduto(Produtos)
 
         while (continuarExecutando):
             Tela.LimpaTela()
@@ -66,7 +51,7 @@ class MenuCadastro:
 
             if (entrada == '1'):
                 CadastroProduto()
-                entrada = 0
+                entrada = 2
 
             if (entrada == '2'):
                 continuarExecutando = False
