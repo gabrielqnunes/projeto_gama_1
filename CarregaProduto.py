@@ -10,6 +10,7 @@ class CarregaProduto:
         return(Produtos)
     
     def ExportProduto(dict):
+        
         Produtos_txt = json.dumps(dict, indent=4)
         with open('Produtos.json', 'w') as df:
             df.write(Produtos_txt)
