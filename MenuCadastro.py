@@ -250,7 +250,6 @@ class MenuCadastro:
                 if (ent == '3'):
                     continuar = False
 
-        ##Remoção de produto
         def RemoverProduto():
 
             Produtos = CarregaProduto.LoadProduto()
@@ -258,11 +257,17 @@ class MenuCadastro:
             while (continuar):
                 Tela.LimpaTela()
                 print('======================================')
+                print('||        LISTA DE PRODUTOS         ||')
+                print('======================================')
+                for produto in Produtos:
+                    print(
+                        '  ({}) - {}'.format(produto["id"], produto["nome"]))
+                print('======================================')
                 print('||      REMOÇÃO DE PRODUTOS         ||')
                 print('======================================')
                 print('|| Escolha o filtro de busca        ||')
-                print('|| (1) Pesquisa por ID do produto   ||')
-                print('|| (2) Pesquisa por NOME do produto ||')
+                print('|| (1) Remova por ID do produto     ||')
+                print('|| (2) Remova por NOME do produto   ||')
                 print('|| (3) Voltar                       ||')
                 print('======================================\n')
                 ent = input('Escolha uma opção: ')
@@ -299,7 +304,7 @@ class MenuCadastro:
                             if (entAlt != '1'):
 
                                 Produtos.remove(Produtos[indice])
-                                print ('Produto Excluído com Sucesso!!!')
+                                print('Produto Excluído com Sucesso!!!')
                                 CarregaProduto.ExportProduto(Produtos)
                                 contExecutando = False
                                 continuar = input(
@@ -310,7 +315,8 @@ class MenuCadastro:
                                     continuar = False
                 if (ent == '2'):
                     listaProd = {}
-                    nomeProduto = input('Digite o Nome do produto a ser excluido: ').title().strip()
+                    nomeProduto = input(
+                        'Digite o Nome do produto a ser excluido: ').title().strip()
                     Tela.LimpaTela()
                     contExecutando = True
                     while (contExecutando):
@@ -339,7 +345,7 @@ class MenuCadastro:
                             if (entAlt != '1'):
 
                                 Produtos.remove(Produtos[indice])
-                                print ('Produto Excluído com Sucesso!!!')
+                                print('Produto Excluído com Sucesso!!!')
                                 CarregaProduto.ExportProduto(Produtos)
                                 contExecutando = False
                                 continuar = input(
@@ -348,7 +354,8 @@ class MenuCadastro:
                                     continuar = True
                                 else:
                                     continuar = False
-
+                if (ent == '3'):
+                    continuar = False
 
         while (continuarExecutando):
             Tela.LimpaTela()
