@@ -45,6 +45,12 @@ class MenuCadastro:
             while (continuar):
                 Tela.LimpaTela()
                 print('======================================')
+                print('||        LISTA DE PRODUTOS         ||')
+                print('======================================')
+                for produto in Produtos:
+                    print(
+                        '  ({}) - {}'.format(produto["id"], produto["nome"]))
+                print('======================================')
                 print('||      ALTERAÇÃO DE PRODUTOS       ||')
                 print('======================================')
                 print('|| Escolha o filtro de busca        ||')
