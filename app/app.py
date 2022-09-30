@@ -16,5 +16,10 @@ def management():
     return render_template('management.html')
 
 
+@app.route('/management/register')
+def register():
+    return render_template('register.html')
+
+
 if (__name__ == '__main__'):
     app.run()

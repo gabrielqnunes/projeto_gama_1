@@ -35,6 +35,11 @@ footer {
     align-items: center;
     justify-content: space-evenly;
     list-style: none;
+
+    background-image: url('/static/images/inventory.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: banner;
 }
 
 .menu-item {
@@ -47,19 +52,15 @@ footer {
 }
 
 .menu-item:nth-child(1) {
-    flex: 4;
-    background-image: url('/static/images/inventory.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    flex: 3;
 }
 
 .menu-item:nth-child(2) {
-    flex: 4;
-    background-image: url('/static/images/reports.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    flex: 3;
+}
+
+.menu-item:nth-child(3) {
+    flex: 3;
 }
 
 .menu-item:last-child {
