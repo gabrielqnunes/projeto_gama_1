@@ -40,7 +40,7 @@ body {
     flex: 1;
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
     transition: 1s;
@@ -69,6 +69,12 @@ body {
     transition: 1s;
 }
 
+a.selected {
+    background-color: rgba(38, 38, 38, 0.5);
+    font-size: 50px;
+    transition: 1s;
+}
+
 .menu-item a:hover {
     background-color: rgba(38, 38, 38, 0.5);
     font-size: 50px;
@@ -94,4 +100,59 @@ body {
 .back a:hover {
     font-size: 40px;
     background-color: rgb(70, 70, 70);
+}
+
+.menu-item form {
+    display: none;
+    flex-direction: column;
+    flex: 4;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: .8em;
+    padding: .8em;
+
+    background-color: rgba(38, 38, 38, 0.5);
+
+    color: whitesmoke;
+    font-size: 26px;
+    line-height: 0;
+}
+
+.menu-item form button {
+    font-size: 20px;
+    height: 2em;
+    width: 12em;
+    background-color: rgba(38, 38, 38, 0.5);
+    color: whitesmoke;
+    transition: .5s;
+    border-radius: 4px;
+}
+
+.menu-item form button:hover {
+    background-color: rgba(38, 38, 38, 0.9);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.label-field {
+    display: flex;
+    align-items: center;
+    gap: .4em;
+}
+
+.label-field input {
+    height: 2em;
+    width: 12em;
+    border: 2px solid rgba(38, 38, 38, 0.9);
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.label-field select {
+    height: 2em;
+    width: 12em;
+    border: 2px solid rgba(38, 38, 38, 0.9);
+    border-radius: 4px;
+    font-size: 18px;
 }

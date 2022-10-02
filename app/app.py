@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 
 @app.route('/')
-@app.route('/home')
 @app.route('/index')
+@app.route('/home')
 def home():
     return render_template('index.html')
 
@@ -16,18 +16,35 @@ def management():
     return render_template('management.html')
 
 
-@app.route('/management/register')
-def register():
-    return render_template('register.html')
+@app.route('/management/product')
+def product():
+    return render_template('product.html')
 
 
-@app.route('/management/register/new', methods=['POST'])
-def register_new():
-    name = request.form['name']
-    price = request.form['price']
-    # FUNCIONALIDADE DE CADASTRAR PRODUTO
-    print(name)
-    return redirect('/management/register')
+@app.route('/management/product/create', methods=['POST'])
+def product_create():
+    name = request.form['product-name']
+    price = request.form['product-price']
+    # FUNCIONALIDADE DE CADASTRAR PRODUTO #######################
+    print(name, price)
+    return redirect('/management/product')
+
+
+@app.route('/management/product/update', methods=['POST'])
+def product_update():
+    name = request.form['product-name']
+    price = request.form['product-price']
+    id = request.form['product-id']
+    # FUNCIONALIDADE DE ATUALIZAR PRODUTO #########################
+    print(name, price, id)
+    return redirect('/management/product')
+
+
+@app.route('/management/product/remove', methods=['POST'])
+def product_remove():
+    id = request.form('product-id')
+    # FUNCIONALIDADE DE REMOVER ##########################
+    return redirect('/management/product')
 
 
 if (__name__ == '__main__'):
