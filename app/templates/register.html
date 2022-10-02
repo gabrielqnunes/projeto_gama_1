@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <header></header>
     <nav class="menu">
         <ul class="menu-list">
             <li class="menu-item">
@@ -20,6 +19,15 @@
                     <img src="{{ url_for('static',filename='images/registration.png') }}" alt="book-icon">
                     <span>Cadastrar</span>
                 </a>
+                <form action="{{ url_for('register_new') }}" method="post">
+                    <label for="name">Nome</label>
+                    <input type="text" name="name">
+                    <br>
+                    <label for="price">Preço</label>
+                    <input type="text" name="price">
+                    <br>
+                    <button type="submit">Cadastrar</button>
+                </form>
             </li>
             <li class="menu-item">
                 <a href="">
@@ -33,7 +41,7 @@
                     <span>Remover</span>
                 </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item back">
                 <a href="{{ url_for('management') }}">
                     <img src="{{ url_for('static',filename='images/curve-arrow.png') }}" alt="cart-icon">
                     <span>Voltar</span>
@@ -41,7 +49,6 @@
             </li>
         </ul>
     </nav>
-    <footer></footer>
 
     <script src=""></script>
 </body>

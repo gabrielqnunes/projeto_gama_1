@@ -17,12 +17,6 @@ body {
     flex-direction: column;
 }
 
-header,
-footer {
-    height: 2%;
-    background-color: beige;
-}
-
 .menu {
     flex: 1;
 }
@@ -39,7 +33,7 @@ footer {
     background-image: url('/static/images/inventory.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: banner;
+    background-size: cover;
 }
 
 .menu-item {
@@ -49,54 +43,55 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
+    transition: 1s;
 }
 
-.menu-item:nth-child(1) {
-    flex: 3;
-}
 
-.menu-item:nth-child(2) {
-    flex: 3;
-}
-
-.menu-item:nth-child(3) {
-    flex: 3;
-}
-
-.menu-item:last-child {
-    flex: 1;
-    background-color: beige;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+.menu-item:hover {
+    flex: 2;
+    transition: 1s;
 }
 
 .menu-item a {
-    flex: .5;
-    height: 50%;
+    flex: 1;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .8rem;
 
-    background-color: rgba(38, 38, 38, 0.834);
-    border-radius: 10px;
+    background-color: rgba(38, 38, 38, 0.9);
     text-decoration: none;
     line-height: 0;
     color: whitesmoke;
     font-size: 40px;
 
-    transition: .5s;
+    transition: 1s;
 }
 
 .menu-item a:hover {
-    height: 56%;
-    flex: .56;
-    background-color: rgba(0, 0, 0, 0.827);
-    font-size: 42px;
-    transition: .5s;
+    background-color: rgba(38, 38, 38, 0.5);
+    font-size: 50px;
+    transition: 1s;
 }
 
 .menu-item img {
     height: 1em;
+}
+
+.back {
+    flex: .2;
+}
+
+.back:hover {
+    flex: .2;
+}
+
+.back a {
+    background-color: rgb(50, 50, 50);
+}
+
+.back a:hover {
+    font-size: 40px;
+    background-color: rgb(70, 70, 70);
 }
