@@ -19,9 +19,13 @@
                 <li>
                     <span class="product-name">{{ product['nome'] }}</span>
                     <div>
-                        <button>-</button>
+                        <a href="#">
+                            <button>-</button>
+                        </a>
                         <span class="product-quantity">0</span>
-                        <button>+</button>
+                        <a href="#">
+                            <button for>+</button>
+                        </a>
                     </div>
                 </li>
                 {% endfor %}

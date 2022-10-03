@@ -72,17 +72,19 @@ main {
     padding: 0 2em;
 }
 
-#marketplace .product-list li button {
+#marketplace .product-list li a button {
     height: 1.6em;
     width: 1.6em;
     font-size: 26px;
     color: whitesmoke;
     background-color: rgb(40, 40, 40);
+    transition: .6s;
 }
 
-#marketplace .product-list li button:hover {
+#marketplace .product-list li a button:hover {
     background-color: rgb(50, 50, 50);
     cursor: pointer;
+    transition: .6s;
 }
 
 #marketplace nav {

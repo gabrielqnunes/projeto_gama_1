@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from services.CarregaProduto import CarregaProduto
 
 app = Flask(__name__)
+carrinho = []
 
 
 @app.route('/')
