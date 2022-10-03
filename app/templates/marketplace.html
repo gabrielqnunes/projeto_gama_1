@@ -17,15 +17,19 @@
             <ul class="product-list black-scrollbar">
                 {% for product in products %}
                 <form action="{{ url_for('marketplace_add') }}" method="post" style="display: none;"
-                    id="{{ product['id'] }}">
+                    id="{{ product['id'] }}-add">
+                    <input type="text" value="{{ product }}" name="product">
+                </form>
+                <form action="{{ url_for('marketplace_remove') }}" method="post" style="display: none;"
+                    id="{{ product['id'] }}-remove">
                     <input type="text" value="{{ product }}" name="product">
                 </form>
                 <li class="product-list-item">
                     <span class="product-name">{{ product['nome'] }}</span>
                     <div>
-                        <button class="b-minus" type="submit" form="{{ product['id'] }}">-</button>
+                        <button class="b-minus" type="submit" form="{{ product['id'] }}-remove">-</button>
                         <span class="product-quantity">0</span>
-                        <button class="b-plus" type="submit" form="{{ product['id'] }}">+</button>
+                        <button class="b-plus" type="submit" form="{{ product['id'] }}-add">+</button>
                     </div>
                 </li>
                 {% endfor %}

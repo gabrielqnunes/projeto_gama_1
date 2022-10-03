@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, jsonify
 from services.CarregaProduto import CarregaProduto
+from services.Carrinho import Carrinho
 
+carrinho = Carrinho()
 app = Flask(__name__)
-carrinho = []
 
 
 @app.route('/')
@@ -59,7 +60,16 @@ def marketplace():
 @app.route('/marketplace_add', methods=['POST'])
 def marketplace_add():
     product = request.form['product']
-    ## ADICIONA CARRINHO AAQUIIIIIII ######################
+    carrinho.adiciona_produto(product)
+    print(carrinho.get_items())
+    return '', 204
+
+
+@app.route('/marketplace_remove', methods=['POST'])
+def marketplace_remove():
+    product = request.form['product']
+    carrinho.remove_produto(product)
+    print(carrinho.get_items())
     return '', 204
 
 
