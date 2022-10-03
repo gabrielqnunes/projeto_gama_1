@@ -49,5 +49,11 @@ def product_remove():
     return redirect('/management/product')
 
 
+@app.route('/marketplace')
+def marketplace():
+    products = CarregaProduto.LoadProduto(app.root_path)
+    return render_template('marketplace.html', products=products)
+
+
 if (__name__ == '__main__'):
     app.run()

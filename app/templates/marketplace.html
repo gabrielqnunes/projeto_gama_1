@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/marketplace.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='images/cart.png') }}" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div id="marketplace">
+            <ul class="product-list black-scrollbar">
+                {% for product in products %}
+                <li>
+                    <span class="product-name">{{ product['nome'] }}</span>
+                    <div>
+                        <button>-</button>
+                        <span class="product-quantity">0</span>
+                        <button>+</button>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <nav>
+                <a href="{{ url_for('home') }}" class="back">
+                    <img src="{{ url_for('static', filename='images/curve-arrow.png') }}" alt="row_left">
+                    <span>Voltar</span>
+                </a>
+                <a href="#">
+                    <img src="{{ url_for('static', filename='images/file-submit.png') }}" alt="submit">
+                    <span>Finalizar</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+</body>
+
+</html>

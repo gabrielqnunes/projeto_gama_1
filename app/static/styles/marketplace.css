@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body,
+main {
+    height: 100%;
+    width: 100%;
+}
+
+#marketplace {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('/static/images/market.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#marketplace .product-list {
+    flex: 9;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+    padding: 2em;
+    padding-bottom: 10%;
+
+    list-style: none;
+    background-color: rgba(38, 38, 38, 0.8);
+
+    color: whitesmoke;
+
+    overflow-y: scroll;
+}
+
+#marketplace .product-list li {
+    height: 12em;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 400px;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+
+    border: 2px solid rgb(60, 60, 60);
+    background-color: rgb(60, 60, 60);
+    border-radius: 10px;
+
+    color: whitesmoke;
+}
+
+#marketplace .product-list li .product-name {
+    font-size: 34px;
+}
+
+#marketplace .product-list li .product-quantity {
+    font-size: 28px;
+    padding: 0 2em;
+}
+
+#marketplace .product-list li button {
+    height: 1.6em;
+    width: 1.6em;
+    font-size: 26px;
+    color: whitesmoke;
+    background-color: rgb(40, 40, 40);
+}
+
+#marketplace .product-list li button:hover {
+    background-color: rgb(50, 50, 50);
+    cursor: pointer;
+}
+
+#marketplace nav {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#marketplace nav a {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6em;
+
+    background-color: rgb(40, 40, 40);
+
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 32px;
+
+    transition: .6s;
+}
+
+#marketplace nav a:hover {
+    background-color: rgb(48, 48, 48);
+    transition: .6s;
+}
+
+#marketplace nav img {
+    height: 1em;
+}
+
+.black-scrollbar::-webkit-scrollbar {
+    width: 1rem;
+    height: 5rem;
+    background-color: rgb(48, 48, 48);
+}
+
+.black-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(60, 60, 60);
+}
