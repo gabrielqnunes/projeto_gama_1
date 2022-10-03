@@ -3,8 +3,10 @@ import json
 
 class CarregaProduto:
     @staticmethod
-    def LoadProduto():
-        with open('Produtos.json', encoding='utf-8') as openfile:
+    def LoadProduto(path):
+        path = path + '/static/data/Produtos.json'
+        print(path)
+        with open(path, encoding='utf-8') as openfile:
             Produtos = json.load(openfile)
         return Produtos
 

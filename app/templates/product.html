@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <h1>{{ json }}</h1>
     <nav class="menu">
         <ul class="menu-list">
             <li class="menu-item">
@@ -41,9 +42,9 @@
                     <div class="label-field">
                         <label for="product-id">Produto</label>
                         <select name="product-id">
-                            <option value="1">Maçã</option>
-                            <option value="2">Banana</option>
-                            <option value="3">Pêra</option>
+                            {% for product in products %}
+                            <option value="{{ product['id'] }}">{{ product['nome'] }}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <div class="label-field">
@@ -64,11 +65,11 @@
                 </a>
                 <form action="{{ url_for('product_remove') }}" method="post">
                     <div class="label-field">
-                        <label for="product-list">Produtos</label>
-                        <select name="product-list">
-                            <option value="1">Maçã</option>
-                            <option value="2">Banana</option>
-                            <option value="3">Pêra</option>
+                        <label for="product-id">Produtos</label>
+                        <select name="product-id">
+                            {% for product in products %}
+                            <option value="{{ product['id'] }}"> {{ product['nome'] }} </option>
+                            {% endfor %}
                         </select>
                     </div>
                     <button type="submit">Remover</button>

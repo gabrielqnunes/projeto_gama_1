@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-
+from services.CarregaProduto import CarregaProduto
 
 app = Flask(__name__)
 
@@ -18,7 +18,8 @@ def management():
 
 @app.route('/management/product')
 def product():
-    return render_template('product.html')
+    products = CarregaProduto.LoadProduto(app.root_path)
+    return render_template('product.html', products=products)
 
 
 @app.route('/management/product/create', methods=['POST'])
@@ -34,16 +35,17 @@ def product_create():
 def product_update():
     name = request.form['product-name']
     price = request.form['product-price']
-    id = request.form['product-id']
+    productId = request.form['product-id']
     # FUNCIONALIDADE DE ATUALIZAR PRODUTO #########################
-    print(name, price, id)
+    print(name, price, productId)
     return redirect('/management/product')
 
 
 @app.route('/management/product/remove', methods=['POST'])
 def product_remove():
-    id = request.form('product-id')
+    productId = request.form['product-id']
     # FUNCIONALIDADE DE REMOVER ##########################
+    print(productId)
     return redirect('/management/product')
 
 
