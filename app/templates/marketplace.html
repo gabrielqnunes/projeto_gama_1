@@ -16,16 +16,16 @@
         <div id="marketplace">
             <ul class="product-list black-scrollbar">
                 {% for product in products %}
-                <li>
+                <form action="{{ url_for('marketplace_add') }}" method="post" style="display: none;"
+                    id="{{ product['id'] }}">
+                    <input type="text" value="{{ product }}" name="product">
+                </form>
+                <li class="product-list-item">
                     <span class="product-name">{{ product['nome'] }}</span>
                     <div>
-                        <a href="#">
-                            <button>-</button>
-                        </a>
+                        <button class="b-minus" type="submit" form="{{ product['id'] }}">-</button>
                         <span class="product-quantity">0</span>
-                        <a href="#">
-                            <button for>+</button>
-                        </a>
+                        <button class="b-plus" type="submit" form="{{ product['id'] }}">+</button>
                     </div>
                 </li>
                 {% endfor %}
@@ -42,6 +42,8 @@
             </nav>
         </div>
     </main>
+
+    <script src="{{ url_for('static', filename='scripts/marketplace.js') }}"></script>
 </body>
 
 </html>

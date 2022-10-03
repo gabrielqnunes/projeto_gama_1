@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 from services.CarregaProduto import CarregaProduto
 
 app = Flask(__name__)
@@ -54,6 +54,13 @@ def product_remove():
 def marketplace():
     products = CarregaProduto.LoadProduto(app.root_path)
     return render_template('marketplace.html', products=products)
+
+
+@app.route('/marketplace_add', methods=['POST'])
+def marketplace_add():
+    product = request.form['product']
+    ## ADICIONA CARRINHO AAQUIIIIIII ######################
+    return '', 204
 
 
 if (__name__ == '__main__'):
