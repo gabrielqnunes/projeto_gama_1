@@ -7,6 +7,9 @@ class Carrinho:
     def get_items(self):
         return self._items
 
+    def clear_items(self):
+        self._items = []
+
     def adiciona_produto(self, produto: str):
         produto = json.loads(produto.replace("'", '"'))
         for item in self._items:
@@ -24,3 +27,9 @@ class Carrinho:
                     item['quantity'] -= 1
                 else:
                     self._items.remove(item)
+
+    def get_total(self):
+        valor_total = 0
+        for item in self._items:
+            valor_total += item['preco'] * item['quantity']
+        return f'{valor_total:.2f}'

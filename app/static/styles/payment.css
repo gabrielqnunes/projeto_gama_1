@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-image: url('/static/images/market.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cover {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(38, 38, 38, 0.6);
+}
+
+main {
+    height: 80%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    border: 2px solid rgb(40, 40, 40);
+    border-radius: 10px;
+    background-color: rgb(40, 40, 40);
+}
+
+.items-list {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+
+    list-style: none;
+    text-decoration: none;
+    font-size: 30px;
+    color: whitesmoke;
+
+    overflow: scroll;
+}
+
+.black-scrollbar::-webkit-scrollbar {
+    width: 1rem;
+    height: 0rem;
+    background-color: rgb(40, 40, 40);
+}
+
+.black-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(60, 60, 60);
+    border-radius: 10px;
+}
+
+.items-list li {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 3em;
+    text-decoration: underline dotted;
+    text-decoration-color: rgb(60, 60, 60);
+}
+
+.items-list li:last-child {
+    font-weight: bold;
+}
+
+.payment-methods {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-methods button {
+    flex: 1;
+    background-color: rgb(40, 40, 40);
+    border: 0;
+    border-top: 2px solid rgb(60, 60, 60);
+    border-radius: 4px;
+    padding: .2em;
+
+    font-size: 30px;
+    color: whitesmoke;
+    transition: .5s;
+}
+
+.payment-methods button:hover {
+    background-color: rgb(60, 60, 60);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6em;
+
+    text-decoration: none;
+    color: whitesmoke;
+    padding-right: 2em;
+}
+
+.back img {
+    height: 1em;
+}

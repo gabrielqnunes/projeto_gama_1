@@ -29,7 +29,6 @@ def product_create():
     name = request.form['product-name']
     price = request.form['product-price']
     # FUNCIONALIDADE DE CADASTRAR PRODUTO #######################
-    print(name, price)
     return redirect('/management/product')
 
 
@@ -39,7 +38,6 @@ def product_update():
     price = request.form['product-price']
     productId = request.form['product-id']
     # FUNCIONALIDADE DE ATUALIZAR PRODUTO #########################
-    print(name, price, productId)
     return redirect('/management/product')
 
 
@@ -47,30 +45,35 @@ def product_update():
 def product_remove():
     productId = request.form['product-id']
     # FUNCIONALIDADE DE REMOVER ##########################
-    print(productId)
     return redirect('/management/product')
 
 
 @app.route('/marketplace')
 def marketplace():
+    carrinho.clear_items()
     products = CarregaProduto.LoadProduto(app.root_path)
     return render_template('marketplace.html', products=products)
 
 
-@app.route('/marketplace_add', methods=['POST'])
+@app.route('/marketplace/add', methods=['POST'])
 def marketplace_add():
     product = request.form['product']
     carrinho.adiciona_produto(product)
-    print(carrinho.get_items())
     return '', 204
 
 
-@app.route('/marketplace_remove', methods=['POST'])
+@app.route('/marketplace/remove', methods=['POST'])
 def marketplace_remove():
     product = request.form['product']
     carrinho.remove_produto(product)
-    print(carrinho.get_items())
     return '', 204
+
+
+@app.route('/marketplace/submit')
+def marketplace_submit():
+    items = carrinho.get_items()
+    total = carrinho.get_total()
+    return render_template('payment.html', items=items, total=total)
 
 
 if (__name__ == '__main__'):

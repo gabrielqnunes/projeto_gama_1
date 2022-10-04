@@ -36,10 +36,10 @@ main {
     gap: 2em;
     flex-wrap: wrap;
     padding: 2em;
-    padding-bottom: 10%;
+    padding-bottom: 12%;
 
     list-style: none;
-    background-color: rgba(38, 38, 38, 0.8);
+    background-color: rgba(38, 38, 38, 0.6);
 
     color: whitesmoke;
 
@@ -131,4 +131,5 @@ main {
 
 .black-scrollbar::-webkit-scrollbar-thumb {
     background-color: rgb(60, 60, 60);
+    border-radius: 10px;
 }

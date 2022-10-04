@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/payment.css') }}">
+</head>
+
+<body>
+    <div class="cover">
+        <main>
+            <ul class="items-list black-scrollbar">
+                {% for item in items%}
+                <li class="item">
+                    <span>{{ item['nome'] }} x {{ item['quantity'] }}</span>
+                    <span>{{ item['quantity'] * item['preco'] }}</span>
+                </li>
+                {% endfor %}
+
+                <li class="item">
+                    <span>Total:</span>
+                    <span>{{ total }}</span>
+                </li>
+            </ul>
+            <nav class="payment-methods">
+                <button>Cartão de crédito</button>
+                <button>Cartão de débito</button>
+                <button>Dinheiro</button>
+                <button>PIX</button>
+                <button>
+                    <a href="{{ url_for('marketplace') }}" class="back">
+                        <img src="{{ url_for('static', filename='images/curve-arrow.png') }}" alt="">
+                        <span>Voltar</span>
+                    </a>
+                </button>
+            </nav>
+        </main>
+    </div>
+
+</body>
+
+</html>
