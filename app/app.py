@@ -29,7 +29,6 @@ def product():
 def product_create():
     name = request.form['product-name']
     price = request.form['product-price']
-    print({"nome": name, "preco": price})
     Produtos.cria(app.root_path, {"nome": name, "preco": price})
     return redirect('/management/product')
 
