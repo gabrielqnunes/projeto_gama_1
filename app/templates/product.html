@@ -23,11 +23,11 @@
                 <form action="{{ url_for('product_create') }}" method="post">
                     <div class="label-field">
                         <label for="product-name">Nome</label>
-                        <input type="text" name="product-name">
+                        <input type="text" name="product-name" required>
                     </div>
                     <div class="label-field">
                         <label for="product-price">Preço</label>
-                        <input type="text" name="product-price">
+                        <input type="text" name="product-price" required>
                     </div>
                     <button type="submit">Cadastrar</button>
                 </form>
