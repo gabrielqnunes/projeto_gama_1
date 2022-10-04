@@ -77,5 +77,10 @@ def marketplace_submit():
     return render_template('payment.html', items=items, total=total)
 
 
+@ app.route('/marketplace/submit/success')
+def marketplace_success():
+    return render_template('payment-conclusion.html')
+
+
 if (__name__ == '__main__'):
     app.run()

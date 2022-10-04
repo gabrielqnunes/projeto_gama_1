@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="3; url={{ url_for('home') }}">
+    <title>Sucesso</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/payment-conclusion.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='images/cart.png') }}" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="cover">
+        <main>
+            <div class="success-message">
+                <img src="{{ url_for('static', filename='images/firework.png') }}" alt="">
+                <span>Compra concluída!</span>
+                <img src="{{ url_for('static', filename='images/firework.png') }}" alt="">
+            </div>
+            <div class="loading-bar"></div>
+        </main>
+    </div>
+</body>
+
+</html>

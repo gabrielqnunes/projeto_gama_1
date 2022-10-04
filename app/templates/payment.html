@@ -27,16 +27,26 @@
                 </li>
             </ul>
             <nav class="payment-methods">
-                <button>Cartão de crédito</button>
-                <button>Cartão de débito</button>
-                <button>Dinheiro</button>
-                <button>PIX</button>
-                <button>
-                    <a href="{{ url_for('marketplace') }}" class="back">
+                <a href="{{ url_for('marketplace_success') }}">
+                    <button>Cartão de crédito</button>
+                </a>
+                <a href="{{ url_for('marketplace_success') }}">
+                    <button>Cartão de débito</button>
+                </a>
+                <a href="{{ url_for('marketplace_success') }}">
+                    <button>Dinheiro</button>
+                </a>
+                <a href="{{ url_for('marketplace_success') }}">
+                    <button>PIX</button>
+                </a>
+
+                <a href="{{ url_for('marketplace') }}" class="back">
+                    <button>
                         <img src="{{ url_for('static', filename='images/curve-arrow.png') }}" alt="">
                         <span>Voltar</span>
-                    </a>
-                </button>
+                    </button>
+                </a>
+
             </nav>
         </main>
     </div>
