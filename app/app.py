@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, jsonify
 from services.CarregaProduto import CarregaProduto
 from services.Carrinho import Carrinho
+from services.Produtos import cria
 
 carrinho = Carrinho()
 app = Flask(__name__)
@@ -28,7 +29,7 @@ def product():
 def product_create():
     name = request.form['product-name']
     price = request.form['product-price']
-    # FUNCIONALIDADE DE CADASTRAR PRODUTO #######################
+    cria()
     return redirect('/management/product')
 
 

@@ -10,8 +10,8 @@ class CarregaProduto:
             Produtos = json.load(openfile)
         return Produtos
 
-    def ExportProduto(dict):
-
+    def ExportProduto(path, dict):
+        path = path + '/static/data/Produtos.json'
         Produtos_txt = json.dumps(dict, indent=4)
-        with open('Produtos.json', 'w') as df:
+        with open(path, 'w') as df:
             df.write(Produtos_txt)
