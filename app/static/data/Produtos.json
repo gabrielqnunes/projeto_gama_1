@@ -68,22 +68,5 @@
         "id": 16,
         "nome": "Bola De Praia",
         "preco": 15.0
-    },
-    {
-        "nome": "kim kardashian",
-        "preco": 9.23,
-        "id": 17
-    },
-    {
-        "nome": "Beyonc\u00e9",
-        "preco": 4.44,
-        "id": 18
-    },
-    {
-        "nome": "Sanidade da Gabi",
-        "preco": 0.0,
-        "id": [
-            19
-        ]
     }
 ]
