@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, jsonify
 from services.CarregaProduto import CarregaProduto
 from services.Carrinho import Carrinho
 from services import Produtos
+from services import Vendas
 
 carrinho = Carrinho()
 app = Flask(__name__)
@@ -47,6 +48,12 @@ def product_remove():
     productId = request.form['product-id']
     # FUNCIONALIDADE DE REMOVER ##########################
     return redirect('/management/product')
+
+
+@ app.route('/management/reports')
+def reports():
+    vendas = Vendas.get_vendas(app.root_path)
+    return render_template('reports.html', vendas=vendas)
 
 
 @ app.route('/marketplace')
