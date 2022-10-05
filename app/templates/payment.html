@@ -17,7 +17,7 @@
                 {% for item in items%}
                 <li class="item">
                     <span>{{ item['nome'] }} x {{ item['quantity'] }}</span>
-                    <span>{{ item['quantity'] * item['preco'] }}</span>
+                    <span>{{ "%.2f"|format(item['quantity'] * item['preco']) }}</span>
                 </li>
                 {% endfor %}
 

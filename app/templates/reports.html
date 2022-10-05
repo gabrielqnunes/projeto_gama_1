@@ -22,15 +22,15 @@
 
                     {% if not loop.last %}
                     <div class="sale-product">
-                        <span>{{ product['nome'] }} x {{ product['quantidade'] }}</span>
-                        <span>{{ product['quantidade'] * product['preco'] }}</span>
+                        <span>{{ product['nome'] }} x {{ product['quantity'] }}</span>
+                        <span>{{ "%.2f"|format(product['quantity'] * product['preco']) }}</span>
                     </div>
                     {% endif %}
 
                     {% if loop.last %}
                     <div class="sale-product total">
                         <span>Total</span>
-                        <span>{{ product }}</span>
+                        <span>{{ "%.2f"|format(product) }}</span>
                     </div>
                     {% endif %}
 

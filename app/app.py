@@ -39,7 +39,7 @@ def product_update():
     name = request.form['product-name']
     price = request.form['product-price']
     productId = request.form['product-id']
-    Produtos.atualiza(app.root_path , productId , name , price)
+    Produtos.atualiza(app.root_path, productId, name, price)
     return redirect('/management/product')
 
 
@@ -86,6 +86,7 @@ def marketplace_submit():
 
 @ app.route('/marketplace/submit/success')
 def marketplace_success():
+    Vendas.set_vendas(app.root_path, carrinho.get_items())
     return render_template('payment-conclusion.html')
 
 

@@ -1,44 +1,146 @@
 [
     [
         {
-            "id": 11,
-            "nome": "Maçã",
-            "preco": 4.15,
-            "quantidade": 1
-        }
-    ],
-    [
+            "id": 4,
+            "nome": "Picles",
+            "preco": 5.79,
+            "quantity": 3
+        },
+        {
+            "id": 5,
+            "nome": "Pepin\u00e3o",
+            "preco": 2.3,
+            "quantity": 2
+        },
         {
             "id": 7,
             "nome": "Banana",
             "preco": 3.15,
-            "quantidade": 5
-        },
-        {
-            "id": 11,
-            "nome": "Maçã",
-            "preco": 4.15,
-            "quantidade": 20
-        },
-        {
-            "id": 2,
-            "nome": "Alface",
-            "preco": 1.89,
-            "quantidade": 100
+            "quantity": 3
         }
     ],
     [
         {
-            "id": 16,
-            "nome": "Bola De Praia",
-            "preco": 15.0,
-            "quantidade": 2
+            "id": 10,
+            "nome": "Moranguinho do nordeste",
+            "preco": 18.98,
+            "quantity": 3
         },
         {
-            "id": 14,
-            "nome": "Pizza",
-            "preco": 30.0,
-            "quantidade": 3
+            "nome": "Sanidade da equipe",
+            "preco": 0.01,
+            "id": 16,
+            "quantity": 4
+        },
+        {
+            "id": 11,
+            "nome": "Ma\u00e7\u00e3",
+            "preco": 4.15,
+            "quantity": 3
+        },
+        {
+            "id": 7,
+            "nome": "Banana",
+            "preco": 3.15,
+            "quantity": 2
+        },
+        {
+            "id": 5,
+            "nome": "Pepin\u00e3o",
+            "preco": 2.3,
+            "quantity": 3
+        },
+        {
+            "id": 6,
+            "nome": "Batata",
+            "preco": 3.29,
+            "quantity": 3
+        },
+        {
+            "id": 9,
+            "nome": "Kombucha",
+            "preco": 5.22,
+            "quantity": 1
+        }
+    ],
+    [
+        {
+            "id": 6,
+            "nome": "Batata",
+            "preco": 3.29,
+            "quantity": 2
+        },
+        {
+            "id": 4,
+            "nome": "Picles",
+            "preco": 5.79,
+            "quantity": 2
+        },
+        {
+            "id": 7,
+            "nome": "Banana",
+            "preco": 3.15,
+            "quantity": 3
+        },
+        {
+            "id": 9,
+            "nome": "Kombucha",
+            "preco": 5.22,
+            "quantity": 3
+        },
+        {
+            "id": 10,
+            "nome": "Moranguinho do nordeste",
+            "preco": 18.98,
+            "quantity": 1
+        },
+        {
+            "id": 13,
+            "nome": "Propolis",
+            "preco": 3.75,
+            "quantity": 1
+        },
+        {
+            "id": 11,
+            "nome": "Ma\u00e7\u00e3",
+            "preco": 4.15,
+            "quantity": 1
+        },
+        {
+            "nome": "Sanidade da equipe",
+            "preco": 0.01,
+            "id": 16,
+            "quantity": 1
+        },
+        {
+            "id": 15,
+            "nome": "Abacate",
+            "preco": 5.4,
+            "quantity": 1
+        },
+        {
+            "id": 1,
+            "nome": "Cebola",
+            "preco": 2.34,
+            "quantity": 1
+        },
+        {
+            "id": 0,
+            "nome": "Cenoura",
+            "preco": 2.12,
+            "quantity": 1
+        },
+        {
+            "id": 3,
+            "nome": "Tomate",
+            "preco": 2.25,
+            "quantity": 1
+        },
+        {
+            "id": 5,
+            "nome": "Pepin\u00e3o",
+            "preco": 2.3,
+            "quantity": 1
         }
     ]
 ]
