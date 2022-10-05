@@ -18,8 +18,8 @@
             <ul class="purchases black-scrollbar">
                 {% for sale in vendas%}
                 <div class="sale">
-
                     {% for product in sale %}
+
                     {% if not loop.last %}
                     <div class="sale-product">
                         <span>{{ product['nome'] }} x {{ product['quantidade'] }}</span>
