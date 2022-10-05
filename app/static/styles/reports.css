@@ -29,8 +29,8 @@ body {
 }
 
 main {
-    height: 60%;
-    width: 50%;
+    height: 70%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,8 +44,39 @@ main {
 .purchases {
     flex: 6;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
 
+    padding: 2em;
     overflow-y: scroll;
+}
+
+.sale {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+    padding-bottom: .8em;
+    border-bottom: 2px solid rgb(60, 60, 60);
+
+    font-size: 30px;
+    color: whitesmoke;
+    text-decoration: underline dotted rgb(60, 60, 60);
+}
+
+.sale-product {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.sale>.total {
+    margin-top: .8em;
+    font-weight: bold;
 }
 
 .black-scrollbar::-webkit-scrollbar {

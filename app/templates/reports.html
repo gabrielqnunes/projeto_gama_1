@@ -17,7 +17,18 @@
         <main>
             <ul class="purchases black-scrollbar">
                 {% for sale in vendas%}
-                <p>{{ sale }}</p>
+                <div class="sale">
+                    {% for product in sale %}
+                    <div class="sale-product">
+                        <span>{{ product['nome'] }} x {{ product['quantidade'] }}</span>
+                        <span>{{ product['quantidade'] * product['preco'] }}</span>
+                    </div>
+                    {% endfor %}
+                    <div class="sale-product total">
+                        <span>Total</span>
+                        <span>0.00</span>
+                    </div>
+                </div>
                 {% endfor %}
             </ul>
             <a href="{{ url_for('management') }}" class="back">
