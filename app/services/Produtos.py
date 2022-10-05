@@ -3,7 +3,6 @@ from services.CarregaProduto import CarregaProduto
 
 def cria(path: str, novo_produto: dict) -> None:
     produtos = CarregaProduto.LoadProduto(path)
-    print(produtos[-1]['id'] + 1)
     novo_produto['id'] = produtos[-1]['id'] + 1
     produtos.append(novo_produto)
     preco_formatado = round(float(novo_produto['preco'].replace(',', '.')), 2)
@@ -16,5 +15,10 @@ def atualiza():
     return
 
 
-def deleta():
-    return
+def deleta(path, id_produto):
+    produtos = CarregaProduto.LoadProduto(path)
+    for produto in produtos:
+        if produto['id'] == id_produto:
+            produtos.remove(produto)
+    CarregaProduto.ExportProduto(path, produtos)
+    return None
