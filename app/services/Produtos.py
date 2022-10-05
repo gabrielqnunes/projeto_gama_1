@@ -15,10 +15,10 @@ def atualiza():
     return
 
 
-def deleta(path, id_produto):
+def deleta(path: str, id_produto: str) -> None:
     produtos = CarregaProduto.LoadProduto(path)
     for produto in produtos:
-        if produto['id'] == id_produto:
+        if str(produto['id']) == id_produto:
             produtos.remove(produto)
     CarregaProduto.ExportProduto(path, produtos)
     return None

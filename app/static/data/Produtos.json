@@ -63,10 +63,5 @@
         "id": 15,
         "nome": "Abacate",
         "preco": 5.4
-    },
-    {
-        "id": 16,
-        "nome": "Bola De Praia",
-        "preco": 15.0
     }
 ]
