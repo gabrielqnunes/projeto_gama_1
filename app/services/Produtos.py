@@ -11,8 +11,16 @@ def cria(path: str, novo_produto: dict) -> None:
     return None
 
 
-def atualiza():
-    return
+def atualiza(path, id , nome, preco):
+    produtos = CarregaProduto.LoadProduto(path)
+    for produto in produtos:
+        if str(produto['id']) == id:
+            produto['nome'] = nome
+            preco_formatado = round(float(preco.replace(',', '.')), 2)
+            produto['preco'] = preco_formatado 
+             
+    CarregaProduto.ExportProduto(path, produtos)
+    return None
 
 
 def deleta(path: str, id_produto: str) -> None:

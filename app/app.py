@@ -39,7 +39,7 @@ def product_update():
     name = request.form['product-name']
     price = request.form['product-price']
     productId = request.form['product-id']
-    # FUNCIONALIDADE DE ATUALIZAR PRODUTO #########################
+    Produtos.atualiza(app.root_path , productId , name , price)
     return redirect('/management/product')
 
 
