@@ -46,7 +46,7 @@ def product_update():
 @ app.route('/management/product/remove', methods=['POST'])
 def product_remove():
     productId = request.form['product-id']
-    # FUNCIONALIDADE DE REMOVER ##########################
+    Produtos.deleta(app.root_path, productId)
     return redirect('/management/product')
 
 
