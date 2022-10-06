@@ -142,5 +142,31 @@
             "preco": 2.3,
             "quantity": 1
         }
+    ],
+    [
+        {
+            "id": 3,
+            "nome": "Tomate",
+            "preco": 2.25,
+            "quantity": 2
+        },
+        {
+            "id": 6,
+            "nome": "Batata",
+            "preco": 3.29,
+            "quantity": 2
+        },
+        {
+            "id": 7,
+            "nome": "Banana",
+            "preco": 3.15,
+            "quantity": 2
+        },
+        {
+            "id": 5,
+            "nome": "Pepin\u00e3o",
+            "preco": 2.3,
+            "quantity": 1
+        }
     ]
 ]

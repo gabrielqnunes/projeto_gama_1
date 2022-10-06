@@ -9,6 +9,7 @@ class CarregaProduto:
             Produtos = json.load(openfile)
         return Produtos
 
+    @staticmethod
     def ExportProduto(path: str, produtos: list) -> None:
         path = path + '/static/data/Produtos.json'
         Produtos_txt = json.dumps(produtos, indent=4)

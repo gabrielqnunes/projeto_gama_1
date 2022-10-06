@@ -10,7 +10,7 @@ class Carrinho:
     def clear_items(self):
         self._items = []
 
-    def adiciona_produto(self, produto: str):
+    def adiciona_produto(self, produto: str) -> None:
         produto = json.loads(produto.replace("'", '"'))
         for item in self._items:
             if item['id'] == produto['id']:
@@ -19,7 +19,7 @@ class Carrinho:
         produto['quantity'] = 1
         self._items.append(produto)
 
-    def remove_produto(self, produto):
+    def remove_produto(self, produto) -> None:
         produto = json.loads(produto.replace("'", '"'))
         for item in self._items:
             if item['id'] == produto['id']:
