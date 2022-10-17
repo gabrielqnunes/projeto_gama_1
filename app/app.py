@@ -3,9 +3,11 @@ from services.CarregaProduto import CarregaProduto
 from services.Carrinho import Carrinho
 from services import Produtos
 from services import Vendas
+from services import Database
 
 carrinho = Carrinho()
 app = Flask(__name__)
+Database.initialise()
 
 
 @app.route('/')
@@ -22,7 +24,7 @@ def management():
 
 @app.route('/management/product')
 def product():
-    products = CarregaProduto.LoadProduto(app.root_path)
+    products = Database.get_products()
     return render_template('product.html', products=products)
 
 
@@ -30,7 +32,7 @@ def product():
 def product_create():
     name = request.form['product-name']
     price = request.form['product-price']
-    Produtos.cria(app.root_path, {"nome": name, "preco": price})
+    Database.set_product({"nome": name, "preco": price})
     return redirect('/management/product')
 
 
@@ -38,15 +40,19 @@ def product_create():
 def product_update():
     name = request.form['product-name']
     price = request.form['product-price']
-    productId = request.form['product-id']
-    Produtos.atualiza(app.root_path, productId, name, price)
+    product_id = request.form['product-id']
+    Database.update_product({
+        "id": product_id,
+        "name": name,
+        "price": price
+    })
     return redirect('/management/product')
 
 
 @ app.route('/management/product/remove', methods=['POST'])
 def product_remove():
-    productId = request.form['product-id']
-    Produtos.deleta(app.root_path, productId)
+    product_id = request.form['product-id']
+    Database.delete_product(product_id)
     return redirect('/management/product')
 
 
@@ -59,7 +65,7 @@ def reports():
 @ app.route('/marketplace')
 def marketplace():
     carrinho.clear_items()
-    products = CarregaProduto.LoadProduto(app.root_path)
+    products = Database.get_products()
     return render_template('marketplace.html', products=products)
 
 
