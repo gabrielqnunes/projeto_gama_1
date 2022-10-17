@@ -54,7 +54,7 @@ main {
     flex: 0 0 400px;
     align-items: center;
     justify-content: center;
-    gap: 2em;
+    gap: 1em;
 
     border: 2px solid rgb(60, 60, 60);
     background-color: rgb(60, 60, 60);
@@ -65,6 +65,10 @@ main {
 
 #marketplace .product-list li .product-name {
     font-size: 34px;
+}
+
+#marketplace .product-list li .product-price {
+    font-size: 28px;
 }
 
 #marketplace .product-list li .product-quantity {

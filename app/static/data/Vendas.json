@@ -168,5 +168,37 @@
             "preco": 2.3,
             "quantity": 1
         }
+    ],
+    [
+        {
+            "id": 1,
+            "nome": "Cenoura",
+            "preco": 2.12,
+            "quantity": 1
+        },
+        {
+            "id": 4,
+            "nome": "Picles",
+            "preco": 5.79,
+            "quantity": 1
+        },
+        {
+            "id": 5,
+            "nome": "Pepin\u00e3o",
+            "preco": 2.3,
+            "quantity": 1
+        },
+        {
+            "id": 7,
+            "nome": "Banana",
+            "preco": 3.15,
+            "quantity": 1
+        },
+        {
+            "id": 9,
+            "nome": "Kombucha",
+            "preco": 5.22,
+            "quantity": 1
+        }
     ]
 ]
