@@ -26,6 +26,7 @@
                 </form>
                 <li class="product-list-item">
                     <span class="product-name">{{ product['nome'] }}</span>
+                    <span class="product-price">{{ "R$ %.2f"|format(product['preco']) }}</span>
                     <div>
                         <button class="b-minus" type="submit" form="{{ product['id'] }}-remove">-</button>
                         <span class="product-quantity">0</span>
