@@ -200,5 +200,37 @@
             "preco": 5.22,
             "quantity": 1
         }
+    ],
+    [
+        {
+            "id": 1,
+            "nome": "Cenoura",
+            "preco": 2.12,
+            "quantity": 2
+        },
+        {
+            "id": 6,
+            "nome": "Batata",
+            "preco": 3.29,
+            "quantity": 3
+        },
+        {
+            "id": 7,
+            "nome": "Banana",
+            "preco": 3.15,
+            "quantity": 5
+        },
+        {
+            "id": 10,
+            "nome": "Moranguinho do nordeste",
+            "preco": 18.98,
+            "quantity": 4
+        },
+        {
+            "id": 13,
+            "nome": "Abacate",
+            "preco": 5.4,
+            "quantity": 1
+        }
     ]
 ]
